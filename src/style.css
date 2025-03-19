@@ -84,104 +84,47 @@ button:focus {
 }
 
 /* Base Navbar Styling */
+/* General Navbar Styling */
 .navbar {
-  position: fixed !important;
-  transition: all 0.3s ease-out 0s !important;
-  padding: 0.3rem 2rem !important;
-  font-size: 1.2rem !important;
-  background-color: #181a27 !important; /* Default background color */
+  background-color: #ffffff;
+  transition: all 0.3s ease;
 }
 
-.navbar-brand {
-  color: rgb(250, 250, 250) !important;
+.sticky {
+  background-color: #343a40; /* Sticky background color when scrolled */
+}
+
+.navbar .logo {
+  max-width: 120px; /* Adjust logo size */
 }
 
 .navbar-toggler {
-  position: relative !important;
-  background-color: transparent !important;
-  border-color: transparent !important;
+  border: none;
+  background-color: transparent;
 }
 
-.navbar-toggler span {
-  display: block !important;
-  background-color: #be50f4 !important;
-  height: 4px !important;
-  width: 27px !important;
-  margin-top: 5px !important;
-  margin-bottom: 5px !important;
-  transform: rotate(0deg) !important;
-  left: 0 !important;
-  opacity: 1 !important;
+.navbar-toggler-icon {
+  background-color: #000; /* Change hamburger icon color */
 }
 
-.navbar-toggler:focus,
-.navbar-toggler:active {
-  outline: 0 !important;
+.navbar-collapse {
+  justify-content: flex-end;
 }
 
-/* Hamburger Menu Animation */
-.navbar-toggler span:nth-child(1),
-.navbar-toggler span:nth-child(3) {
-  transition: transform 0.35s ease-in-out !important;
-}
-
-.navbar-toggler:not(.collapsed) span:nth-child(1) {
-  position: absolute !important;
-  left: 12px !important;
-  top: 10px !important;
-  transform: rotate(135deg) !important;
-  opacity: 0.9 !important;
-}
-
-.navbar-toggler:not(.collapsed) span:nth-child(2) {
-  height: 12px !important;
-  visibility: hidden !important;
-  background-color: transparent !important;
-}
-
-.navbar-toggler:not(.collapsed) span:nth-child(3) {
-  position: absolute !important;
-  left: 12px !important;
-  top: 10px !important;
-  transform: rotate(-135deg) !important;
-  opacity: 0.9 !important;
-}
-
-/* Navbar Links Styling */
-.navbar-nav .nav-link {
-  color: white !important;
-  padding-right: 1rem !important;
-  padding-left: 1rem !important;
-}
-
-.navbar-nav .nav-item {
-  position: relative;
+/* Navbar Items Styling */
+.nav-item {
   margin-left: 20px;
 }
 
-.navbar-nav .nav-item a {
-  font-weight: 400;
-  transition: all 0.3s ease-out 0s;
-  position: relative;
-  z-index: 1;
+.nav-link {
+  color: #000 !important; /* Change color of nav links */
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s ease;
 }
 
-.navbar-nav .nav-item a::after {
-  content: "";
-  position: relative;
-  display: block;
-  height: 5px;
-  width: 0;
-  border-radius: 16px;
-  background: #c95bf5;
-  bottom: 1px;
-  left: 0;
-  z-index: -1;
-  transition: all 0.3s ease-out 0s;
-}
-
-.navbar-nav .nav-item a:hover::after {
-  width: 100%;
+.nav-link:hover {
+  color: #007bff; /* Hover effect on nav links */
 }
 
 /* Fork Button Styling */
@@ -189,23 +132,20 @@ button:focus {
   background-color: #007bff;
   border-radius: 30px;
   padding: 8px 15px;
-  font-size: 1rem;
 }
 
 .fork-btn-inner:hover {
   background-color: #0056b3;
 }
 
-/* Mobile Specific Styles */
+/* Responsive Styles */
 @media (max-width: 767px) {
   .navbar {
-    padding: 1rem 2rem !important;
-    font-size: 1.4rem !important;
-    background-color: #181a27 !important; /* Dark background for mobile */
+    padding: 10px 0;
   }
 
   .navbar-toggler {
-    background-color: transparent !important;
+    border: none;
   }
 
   .navbar-collapse {
@@ -213,70 +153,29 @@ button:focus {
     justify-content: center;
   }
 
-  .navbar-nav .nav-item {
-    margin-left: 0;
-    margin-right: 0;
-    padding: 0.5rem 0;
-    text-align: center;
+  .nav-item {
+    margin: 10px 0;
   }
 
   .nav-link {
-    padding: 0.8rem 1rem !important;
-    font-size: 1.2rem !important;
-  }
-
-  .nav-item a::after {
-    display: none !important;
+    font-size: 1.1rem; /* Adjust text size for mobile */
   }
 
   .fork-btn-inner {
     font-size: 0.9rem;
-    width: 100%;
-    text-align: center;
-  }
-  
-  /* Navbar toggle button adjustment for mobile */
-  .navbar-toggler {
-    padding: 0.25rem 0.75rem !important;
   }
 
-  .navbar-nav .nav-item a {
-    font-size: 1.2rem !important;
+  /* Ensure navbar background is visible when scrolling */
+  .sticky {
+    background-color: #333 !important;
   }
 }
 
-/* Desktop Specific Styles */
-@media (min-width: 768px) {
-  .navbar {
-    padding: 0.3rem 2rem !important;
-    font-size: 1.2rem !important;
-  }
-
-  .navbar-nav .nav-item {
-    margin-left: 20px;
-  }
-
-  .nav-link {
-    padding: 0.8rem 1rem !important;
-    font-size: 1.2rem;
-  }
-
-  .fork-btn-inner {
-    font-size: 1rem;
-    width: auto;
-    display: inline-block;
+@media (max-width: 576px) {
+  .logo {
+    max-width: 100px; /* Adjust logo size for smaller screens */
   }
 }
-
-/* Large Screen Styling */
-@media (min-width: 1200px) {
-  .navbar {
-    padding: 0.5rem 3rem !important;
-    font-size: 1.3rem !important;
-  }
-}
-
-
 /* --------- */
 /* Home section */
 /* --------- */
