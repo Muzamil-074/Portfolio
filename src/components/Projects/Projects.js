@@ -24,7 +24,7 @@ function Projects() {
               title="Medicine Insight Ai"
               description="**Med-Insight** is an AI-powered web app that provides instant, reliable information on any medicine, including uses, dosage, side effects, and interactions. Ideal for healthcare professionals, patients, and anyone seeking accurate drug details."
               ghLink="https://github.com/Muzamil-074/MedInsight-Web-App-Project"
-              demoLink="https://med-insight-web-app-project.vercel.app/"
+              demoLink="https://med.muzamildars.xyz/Home"
             />
           </Col>
 
