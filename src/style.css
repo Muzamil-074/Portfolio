@@ -206,6 +206,33 @@ button:focus {
 .navbar-nav .nav-item a:hover::after {
   width: 100%;
 }
+@media (max-width: 767px) {
+  .navbar {
+    padding: 0.5rem 1rem !important;
+    font-size: 1rem !important;
+    background-color: #181a27 !important;
+  }
+
+  .logo {
+    width: 80px; /* Reduce logo size */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  .navbar-toggler span {
+    width: 22px !important;
+    height: 3px !important;
+  }
+
+  .nav-link {
+    font-size: 1rem !important;
+    padding: 0.5rem !important;
+  }
+
+  .navbar-nav .nav-item {
+    margin-left: 10px;
+  }
+}
+
 /* --------- */
 /* Home section */
 /* --------- */
