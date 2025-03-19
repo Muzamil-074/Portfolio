@@ -83,98 +83,128 @@ button:focus {
   backdrop-filter: blur(15px) !important;
 }
 
-/* Base Navbar Styling */
-/* General Navbar Styling */
 .navbar {
-  background-color: #ffffff;
-  transition: all 0.3s ease;
-}
-
-.sticky {
-  background-color: #343a40; /* Sticky background color when scrolled */
-}
-
-.navbar .logo {
-  max-width: 120px; /* Adjust logo size */
+  position: fixed !important;
+  transition: all 0.3s ease-out 0s !important;
+  padding: 0.3rem 2rem !important;
+  font-size: 1.2rem !important;
 }
 
 .navbar-toggler {
-  border: none;
-  background-color: transparent;
+  position: relative !important;
+  background-color: transparent !important;
+  border-color: transparent !important;
 }
 
-.navbar-toggler-icon {
-  background-color: #000; /* Change hamburger icon color */
+.navbar-toggler span {
+  display: block !important;
+  background-color: #be50f4 !important;
+  height: 4px !important;
+  width: 27px !important;
+  margin-top: 5px !important;
+  margin-bottom: 5px !important;
+  transform: rotate(0deg) !important;
+  left: 0 !important;
+  opacity: 1 !important;
 }
 
-.navbar-collapse {
-  justify-content: flex-end;
+.navbar-toggler:focus,
+.navbar-toggler:active {
+  outline: 0 !important;
 }
 
-/* Navbar Items Styling */
-.nav-item {
-  margin-left: 20px;
+.navbar-toggler span:nth-child(1),
+.navbar-toggler span:nth-child(3) {
+  transition: transform 0.35s ease-in-out !important;
+  transition: transform 0.35s ease-in-out !important;
+}
+
+.navbar-toggler:not(.collapsed) span:nth-child(1) {
+  position: absolute !important;
+  left: 12px !important;
+  top: 10px !important;
+  transform: rotate(135deg) !important;
+  opacity: 0.9 !important;
+}
+
+.navbar-toggler:not(.collapsed) span:nth-child(2) {
+  height: 12px !important;
+  visibility: hidden !important;
+  background-color: transparent !important;
+}
+
+.navbar-toggler:not(.collapsed) span:nth-child(3) {
+  position: absolute !important;
+  left: 12px !important;
+  top: 10px !important;
+  transform: rotate(-135deg) !important;
+  opacity: 0.9 !important;
+}
+
+@media (max-width: 767px) {
+  .navbar {
+    padding: 1rem 2rem !important;
+    font-size: 1.4rem !important;
+    background-color: #181a27 !important;
+  }
+  .navbar-nav .nav-item a::after {
+    display: none !important;
+  }
+}
+.navbar-brand {
+  color: rgb(250, 250, 250) !important;
+}
+
+/* styles.css */
+.logo {
+  width: 120px;  /* Set your desired width */
+  height: 100px;  /* Maintain aspect ratio */
+}
+
+.navbar-nav .nav-link {
+  color: white !important;
+  padding-right: 1rem !important;
+  padding-left: 1rem !important;
 }
 
 .nav-link {
-  color: #000 !important; /* Change color of nav links */
-  font-weight: 500;
-  font-size: 1rem;
-  transition: color 0.3s ease;
+  padding: 0.8rem 1rem !important;
 }
 
-.nav-link:hover {
-  color: #007bff; /* Hover effect on nav links */
-}
-
-/* Fork Button Styling */
-.fork-btn-inner {
-  background-color: #007bff;
-  border-radius: 30px;
-  padding: 8px 15px;
-}
-
-.fork-btn-inner:hover {
-  background-color: #0056b3;
-}
-
-/* Responsive Styles */
 @media (max-width: 767px) {
-  .navbar {
-    padding: 10px 0;
-  }
-
-  .navbar-toggler {
-    border: none;
-  }
-
-  .navbar-collapse {
-    flex-basis: 100%;
-    justify-content: center;
-  }
-
-  .nav-item {
-    margin: 10px 0;
-  }
-
   .nav-link {
-    font-size: 1.1rem; /* Adjust text size for mobile */
-  }
-
-  .fork-btn-inner {
-    font-size: 0.9rem;
-  }
-
-  /* Ensure navbar background is visible when scrolling */
-  .sticky {
-    background-color: #333 !important;
+    padding: 0.7rem 1rem !important;
   }
 }
 
-@media (max-width: 576px) {
-  .logo {
-    max-width: 100px; /* Adjust logo size for smaller screens */
-  }
+.navbar-nav .nav-item {
+  position: relative;
+  margin-left: 20px;
+}
+
+.navbar-nav .nav-item a {
+  font-weight: 400;
+  transition: all 0.3s ease-out 0s;
+  position: relative;
+  z-index: 1;
+}
+
+.navbar-nav .nav-item a::after {
+  content: "";
+  position: relative;
+  display: block;
+  height: 5px;
+  width: 0;
+  border-radius: 16px;
+  background: #c95bf5;
+  bottom: 1px;
+  left: 0;
+  z-index: -1;
+  transition: all 0.3s ease-out 0s;
+}
+
+.navbar-nav .nav-item a:hover::after {
+  width: 100%;
 }
 /* --------- */
 /* Home section */
