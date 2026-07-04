@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Pair Inter for clean body copy and Space Grotesk for tech-forward display typography */
+  --font-sans: "Space Grotesk", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Override dark-mode grays with the super high-contrast pitch black palette from the Professional Polish theme */
+  --color-neutral-950: #050505;
+  --color-neutral-900: #0c0c0f;
+  --color-neutral-800: #1a1a24;
+  --color-neutral-700: #292936;
+
+  /* Custom animations for premium layout effects */
+  --animate-spin-slow: spin 20s linear infinite;
+  --animate-ping-slow: ping 3s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@layer utilities {
+  /* Custom Grid template column count layout helper for github grid simulation */
+  .grid-cols-16 {
+    grid-template-columns: repeat(16, minmax(0, 1fr));
+  }
+}
+
+/* Custom general scrollbars and focus actions */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.2);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 92, 246, 0.4);
+}
+
+html {
+  scroll-behavior: smooth;
+}
