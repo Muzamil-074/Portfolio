@@ -21,7 +21,8 @@ export const personalInfo = {
   freelanceStatus: "Available",
   yearsExperience: 4,
   resumeUrl: "#", // Direct scroll or dummy action
-  cvDownloadName: "Muzamil_Dars_CV.pdf"
+  cvDownloadName: "Muzamil_Dars_CV.pdf",
+  profileImage:'/dp.jpg'
 };
 
 export const navItems = [
