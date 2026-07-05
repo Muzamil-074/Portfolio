@@ -31,21 +31,24 @@ export default function Navbar() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+const scrollToSection = (targetId: string) => {
+  const element = document.getElementById(targetId);
 
-  const scrollToSection = (targetId: string) => {
-    setIsMobileMenuOpen(false);
-    const element = document.getElementById(targetId);
-    if (element) {
-      const offset = 80; // height of navbar
-      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-      const offsetPosition = elementPosition - offset;
+  if (element) {
+    const offset = 80; // Navbar height
+    const elementPosition = element.offsetTop - offset;
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    }
-  };
+    window.scrollTo({
+      top: elementPosition,
+      behavior: "smooth",
+    });
+
+    // Close mobile menu after scrolling starts
+    setTimeout(() => {
+      setIsMobileMenuOpen(false);
+    }, 300);
+  }
+};
 
   return (
     <header
