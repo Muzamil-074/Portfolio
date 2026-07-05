@@ -121,8 +121,8 @@ export default function Hero() {
             </button>
 
             <a
-              href="/muzamil_dars_resume.jpg"
-              download="Muzamil_Dars_CV.jpg"
+              href="/Muzamil_Dars_CV.pdf"
+              download="/Muzamil_Dars_CV.pdf"
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-xs font-bold tracking-wide uppercase bg-neutral-200/50 dark:bg-neutral-900/40 border border-neutral-200/50 dark:border-white/5 text-neutral-600 dark:text-neutral-400 hover:bg-neutral-200 dark:hover:bg-neutral-900 transition-all hover:scale-[1.02]"
             >
               <Download size={14} className="mr-1" />
@@ -158,18 +158,18 @@ export default function Hero() {
               {/* Profile Image with Overlay */}
               <div className="w-full h-full rounded-full overflow-hidden bg-neutral-900 border-4 border-white dark:border-neutral-950 relative group">
                 <img
-                  src='/dp.jpg'// High-quality modern profile photo representation
+                  src={personalInfo.profileImage}
                   alt="Muzamil Dars Profile"
-                  className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-all duration-700 md:grayscale md:group-hover:grayscale-0 md:group-hover:scale-105"
                   referrerPolicy="no-referrer"
                 />
                 {/* Tech Glow Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-blue-950/60 via-transparent to-transparent opacity-60" />
                 
                 {/* Cyber Matrix Tech Text overlay on hover */}
-                <div className="absolute bottom-6 left-0 right-0 text-center pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-6 left-0 right-0 text-center pointer-events-none opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
                   <span className="bg-neutral-950/80 px-3 py-1.5 rounded-full border border-neutral-800 font-mono text-[10px] text-blue-400 uppercase tracking-widest">
-                    MUZAMIL_DARS
+                    MUZAMIL DARS
                   </span>
                 </div>
               </div>
